@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="./css/guardianAngel.css">
+    
+    <title>守護天使指引卡</title>
+
+    
+
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <!--historyList The Modal -->
+        <div class="modal fade" id="historyList">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content modalBackgroundImg">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 id="listheader" class="modal-title text-white col-11">歷史清單 - 過去所問的結果</h4>
+                        <button type="button" class="close col-1" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body ">
+                        <table class="listData">
+                            <tr>
+                                <th>時間</th>
+                                <th>問題</th>
+                                <th>過去</th>
+                                <th>現在</th>
+                                <th>未來</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer ">
+
+                        <button id="listClear" type="button" class="btn btn-warning mr-auto" data-dismiss="modal"><i
+                                class="fa fa-trash-o" aria-hidden="true">清除紀錄</i></button>
+                        <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div><!--^^^historyList The Modal ^^^-->
+
+
+
+        <!--ReadMe The Modal -->
+        <div class="modal fade" id="readMeBtn">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content modalBackgroundImg" id='testBackgroundImg'>
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 id="readMeHeader" class="modal-title text-center text-white col-11">守護天使是什麼呢 !? </h4>
+                        <button type="button" class="close col-1 " data-dismiss="modal" style="color:lightseagreen;">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body ">
+                        <iframe id="readMeBody" class="col-12 " src="./cardInfo/readMe1.html" frameborder="0"
+                            height="300px"></iframe>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer ">
+                        <button id="readMePreBtn" value="0" type="button" class="readMePageBtn mr-auto btn btn-primary "
+                            hidden>上一步</button>
+                        <button id="readMeNextBtn" value="1" type="button"
+                            class="readMePageBtn btn btn-primary ">下一步</button>
+                        <button id="readMeClose" type="button" class="btn btn-danger " data-dismiss="modal"
+                            hidden>Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ^^^ReadMe^^^ -->
+
+        <!--卡牌解釋 The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered .modal-dialog-scrollable">
+
+                <div class="modal-content modalBackgroundImg">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header d-block float-right ">
+                        <h4 id="cardTitle" class="modal-title text-center mb-2 text-info">Modal Heading</h4>
+                        <figure class="">
+                            <img class=" d-inline-block col-4" src="" alt="" id="modalBoxCard">
+                            <iframe id="cardT" src="" class="float-left d-inline-block col-8" marginwidth="0"
+                                scrolling="auto" frameborder="0" height="100%" ></iframe>
+                        </figure>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body ">
+                        <iframe id="cardB" src="" frameborder="0" width="100%" scrolling="auto"></iframe>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer ">
+                        <iframe id="cardF" src="" frameborder="0" width="100%" scrolling="no"></iframe>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--^^^ 卡牌解釋 END ^^^-->
+
+
+        <div class="row vh-100 vw-100  ">
+
+            <span id="topRight">
+                <button id='saveBtn' type="button" class="rounded-circle btn ">
+                    <i class="fa fa-floppy-o fa-3x" aria-hidden="true" style="color :#f8f86b;"></i>
+                </button><!--^^ saveBtn ^^-->
+
+                <button id="refreshBtn" type="button" class="rounded-circle btn ">
+                    <i class="fa fa-refresh fa-3x" aria-hidden="true" style="color :#f8f86b;"></i>
+                </button><!--^^refreshBtn^^-->
+                
+
+                <span id="musicBtn" type="button" class="rounded-circle btn ">
+                    <i id="musicOn" class="fa fa-music fa-3x" aria-hidden="true" style="color :#f8f86b;"></i>
+                    <span id="musicOff" class="fa fa-stack fa-2x">
+                        <i class="fa fa-music fa-stack-1x " aria-hidden="true" style="color :#f8f86b;"></i>
+                        <i class="fa fa-ban fa-stack-2x " style="color: red;"></i>
+                    </span>
+                    <audio id='musicPlayer' src="./music/ro.mp3" type="audio/mepg" loop ></audio>
+                </span><!--^^musicBtn^^-->
+
+            </span><!--^^topRight^^-->
+            
+
+            <button id="readMeBtn1" type="button" class="rounded-circle btn" data-toggle="modal"
+                data-target="#readMeBtn">
+                <i class="fa fa-question-circle fa-3x" aria-hidden="true" style="color :#a42200;"></i>
+            </button> <!--^^ readMeBtn1^^ -->
+
+            <button id="historyListBtn" type="button" class="rounded-circle btn " data-toggle="modal"
+                data-target="#historyList">
+                <i class="fa fa-list-alt fa-3x" aria-hidden="true" style="color :#a42200;"></i>
+            </button><!--^^ histoyListBtn ^^-->
+
+            <button class="btn btn-lg btn-outline-danger rounded-pill" id="startBtn">開始</button>
+            <!-- 抽到的三張卡 -->
+            <div class="box">
+                <!-- Last -->
+                <div class="box1 " id="box1" value="0">
+                    <button type="button" class="btn modalCard1 " data-toggle="modal" data-target="#myModal">
+                        <img src="" alt="" id="boxCard1" width="100px">
+                    </button>
+                </div>
+                <!-- Now -->
+                <div class="box2 " id="box2" value="0">
+                    <button type="button" class="btn modalCard2" data-toggle="modal" data-target="#myModal">
+                        <img src="" alt="" id="boxCard2" width="100px">
+                    </button>
+                </div>
+                <!-- Future -->
+                <div class="box3 " id="box3" value="0">
+                    <button type="button" class="btn modalCard3" data-toggle="modal" data-target="#myModal">
+                        <img src="" alt="" id="boxCard3" width="100px">
+                    </button>
+                </div>
+            </div><!-- ^^抽到的三張卡^^ -->
+
+
+            <!-- Total 卡牌位置 -->
+            <div class="d1" id="d1"></div>
+            <div class="d1" id="d2"></div>
+            <div class="d1" id="d3"></div>
+            <div class="d1" id="d4"></div>
+            <div class="d1" id="d5"></div>
+            <div class="d1" id="d6"></div>
+            <div class="d1" id="d7"></div>
+            <div class="d1" id="d8"></div>
+            <div class="d1" id="d9"></div>
+            <div class="d1" id="d10"></div>
+            <div class="d1" id="d11"></div>
+            <div class="d1" id="d12"></div>
+            <div class="d1" id="d13"></div>
+            <div class="d1" id="d14"></div>
+            <div class="d1" id="d15"></div>
+            <div class="d1" id="d16"></div>
+            <div class="d1" id="d17"></div>
+            <div class="d1" id="d18"></div>
+            <div class="d1" id="d19"></div>
+            <div class="d1" id="d20"></div>
+            <div class="d1" id="d21"></div>
+            <div class="d1" id="d22"></div>
+            <div class="d2" id="d23"></div>
+            <div class="d2" id="d24"></div>
+            <div class="d2" id="d25"></div>
+            <div class="d2" id="d26"></div>
+            <div class="d2" id="d27"></div>
+            <div class="d2" id="d28"></div>
+            <div class="d2" id="d29"></div>
+            <div class="d2" id="d30"></div>
+            <div class="d2" id="d31"></div>
+            <div class="d2" id="d32"></div>
+            <div class="d2" id="d33"></div>
+            <div class="d2" id="d34"></div>
+            <div class="d2" id="d35"></div>
+            <div class="d2" id="d36"></div>
+            <div class="d2" id="d37"></div>
+            <div class="d2" id="d38"></div>
+            <div class="d2" id="d39"></div>
+            <div class="d2" id="d40"></div>
+            <div class="d2" id="d41"></div>
+            <div class="d2" id="d42"></div>
+            <div class="d2" id="d43"></div>
+            <div class="d2" id="d44"></div>
+
+        </div> <!-- ^^row vh-100 vw-100^^ -->
+    </div><!--^^ container-fluid^^ -->
+
+
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    
+    <script src="./js/guardianAngel.js"></script>
+
+</body>
+
+</html>
