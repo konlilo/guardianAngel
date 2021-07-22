@@ -1,0 +1,157 @@
+#cardT {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    background-image: url(../img/bg-game4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.row div {
+    height: 150px;
+    width: 100px;
+    position: absolute;
+}
+
+.row .d1 {
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-property: transform;
+
+}
+
+.row .d2 {
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-property: transform;
+
+}
+
+.d1,
+.d2 {
+    height: 150px;
+    width: 100px;
+    border: 5px solid purple;
+    background-image: url(../img/bg-card.svg);
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+
+}
+
+.row .d1:hover {
+    border: 3px solid #ee4866;
+
+}
+
+.row .d2:hover {
+    border: 3px solid #ee4866;
+
+}
+
+#startBtn {
+    margin-bottom: 200px;
+}
+
+
+
+#box1 {
+
+    top: -20px;
+    right: 200px;
+    opacity: 0.9;
+    color: red;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2rem;
+
+}
+
+#box2 {
+
+    top: -20px;
+    opacity: 0.9;
+    color: red;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2rem;
+
+}
+
+#box3 {
+
+    top: -20px;
+    left: 200px;
+    opacity: 0.9;
+    color: red;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+#readMeBtn1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#historyListBtn {
+    position: absolute;
+    left: 60px;
+    top: 0;
+}
+
+#topRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#refreshBtn {
+    right: 60px;
+}
+
+#saveBtn {
+    right: 120px;
+}
+
+table {
+
+    width: 100%;
+    text-align: center;
+}
+table th,td{
+    color:white;
+}
+table th{
+    border-bottom: 1px solid white ;
+}
+
+
+.modalBackgroundImg{
+    background-image: url(../img/modalBackGround2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+
+}
